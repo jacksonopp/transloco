@@ -1,0 +1,5 @@
+{
+  "key": "value",
+  "key.SUFFIX": "value with suffix",
+  "otherKey": "a different value"
+}
