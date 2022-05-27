@@ -49,12 +49,12 @@ export class MessageFormatTranspiler extends DefaultTranspiler {
     if (!value) {
       return value;
     }
-
+    
     if (isObject(value) && params) {
       Object.keys(params).forEach((p) => {
         const v = getValue(value, p);
         const getParams = getValue(params, p);
-
+        
         const transpiled = super.transpile(v, getParams, translation);
         const message = this.messageFormat.compile(transpiled);
         value = setValue(value, p, message(params[p]));

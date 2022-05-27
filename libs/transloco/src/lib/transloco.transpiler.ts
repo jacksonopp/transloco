@@ -16,7 +16,7 @@ import {
 export const TRANSLOCO_TRANSPILER = new InjectionToken('TRANSLOCO_TRANSPILER');
 
 export interface TranslocoTranspiler {
-  transpile(value: any, params: HashMap, translation: Translation): any;
+  transpile(value: any, params: HashMap, translation: Translation, key?: any): any;
 
   onLangChanged?(lang: string): void;
 }
@@ -31,9 +31,9 @@ export class DefaultTranspiler implements TranslocoTranspiler {
     this.interpolationMatcher = resolveMatcher(userConfig);
   }
 
-  transpile(value: any, params: HashMap = {}, translation: Translation): any {
+  transpile(value: any, params: HashMap = {}, translation: Translation, key?: any): any {
     if (isString(value)) {
-      return value.replace(this.interpolationMatcher, (_, match) => {
+      return value.replace(this.interpolationMatcher, (key, match) => {
         match = match.trim();
         if (isDefined(params[match])) {
           return params[match];
