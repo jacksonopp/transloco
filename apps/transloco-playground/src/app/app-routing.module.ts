@@ -68,10 +68,14 @@ const routes: Routes = [
     loadChildren: () =>
       import('./locale/locale.module').then((m) => m.LocaleModule),
   },
+  {
+    path: 'custom-transpilers',
+    loadChildren: () => import('./custom-transpilers/custom-transpilers.module').then((m) => m.CustomTranspilersModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
