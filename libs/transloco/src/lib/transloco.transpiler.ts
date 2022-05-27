@@ -33,7 +33,7 @@ export class DefaultTranspiler implements TranslocoTranspiler {
 
   transpile(value: any, params: HashMap = {}, translation: Translation, key?: any): any {
     if (isString(value)) {
-      return value.replace(this.interpolationMatcher, (key, match) => {
+      return value.replace(this.interpolationMatcher, (_, match) => {
         match = match.trim();
         if (isDefined(params[match])) {
           return params[match];

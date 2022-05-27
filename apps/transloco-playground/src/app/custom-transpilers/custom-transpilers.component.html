@@ -1,16 +1,17 @@
 <h2>Custom Transpilers</h2>
+<p>In order to test this, you will need to provide the <code>customTranspiler</code> in app.module.ts</p>
 <hr />
 <h3>Directly using keys</h3>
 <ng-container *transloco="let t">
   <ul class="list-group">
     <li class="list-group-item">
-      <b>Key without suffix:</b> {{t('ct.key')}}
+      key = 'ct.key'; translation = {{t('ct.key')}};
     </li>
     <li class="list-group-item">
-      <b>Key with suffix:</b> {{t('ct.key.SUFFIX')}}
+      key = 'ct.key.SUFFIX'; translation = {{t('ct.key.SUFFIX')}};
     </li>
     <li class="list-group-item">
-      <b>Other key:</b> {{t('ct.otherKey')}}
+      key = 'ct.otherKey'; translation = {{t('ct.otherKey')}};
     </li>
   </ul>
 </ng-container>

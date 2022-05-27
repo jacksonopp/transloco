@@ -1,14 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  templateUrl: './custom-transpilers.component.html',
-  styleUrls: ['./custom-transpilers.component.scss']
+  templateUrl: './custom-transpilers.component.html'
 })
-export class CustomTranspilersComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class CustomTranspilersComponent {
 
 }
